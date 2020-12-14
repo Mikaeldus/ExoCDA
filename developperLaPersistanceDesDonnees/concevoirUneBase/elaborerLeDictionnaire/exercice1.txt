@@ -12,3 +12,4 @@ Nom : Numéro du responsable                 Code : resNum              Type : N
 Nom : Nom du responsable                    Code : resPrenom           Type : VARCHAR(50)
 Nom : Prenom du responsable                 Code : resNom              Type : VARCHAR(50)
 
+test
