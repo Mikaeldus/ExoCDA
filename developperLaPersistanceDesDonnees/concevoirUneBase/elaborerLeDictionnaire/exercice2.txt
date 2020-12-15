@@ -1,0 +1,16 @@
+Libelle	                        Code	                Type	            Observations
+Numéro du stagiaire 	        stag_id	                INT(10)	            >0 unique
+Nom du stagiaire	            stag_nom	            VARCHAR(50)	
+Prenom du stagiaire	            stag_prenom	            VARCHAR(50)	
+Sexe du stagiaire	            stag_sexe	            VARCHAR(1)	        H/F
+Adresse du stagiaire	        stag_adresse	        VARCHAR(50)	
+Ville du stagiaire	            stag_ville	            VARCHAR(50)	
+Cp du stagiaire	                stag_cp	                VARCHAR(5)	
+Datedenaissance du stagiaire	stag_datedenaissance	DATE	            jj/mm/aaaa
+Numéro de la formation	        for_id	                INT(10)	
+Nom de la formation	            for_nom	                VARCHAR(50)	
+Niveau de la formation	        for_niveau	            INT(1)	
+Titre obtenu de la formation	for_titre	            BOOLEEN	            O/N
+Duree de la formation	        for_duree	            INT	                jours
+Datededebut de la formation	    for_datededebut	        DATE	
+Datedefin de la formation	    for_datedefin	        DATE	
