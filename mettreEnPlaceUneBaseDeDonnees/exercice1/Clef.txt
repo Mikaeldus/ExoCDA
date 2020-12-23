@@ -1,0 +1,3 @@
+Table : Personne Clef primaire : per_num
+Table : Groupe Clef primaire : gro_num
+Table : Appartient Clef primaire : per_num, gro_num Clef etrangères : per_num(Personne), gro_num(Groupe)
