@@ -1,0 +1,20 @@
+Bien mettre en place l'intégration des tables, vérifier les clefs primaires, ensuite ajouter les jointures
+en changant les intitulés des champs pour que ça soit propres et correspondent aux tables.
+
+Table station PK = sta_num
+Table hotel PK = hot_num
+Table chambre PK = cham_num
+Table reservation PK = reser_cham_num,reser_cli_num
+Table client PK = cli_num
+
+Les contraintes et les clefs FK =
+
+ALTER TABLE hotel
+ADD CONSTRAINT hotel_station_FK FOREIGN KEY (hot_sta_num) REFERENCES station(sta_num);
+
+ALTER TABLE chambre
+ADD CONSTRAINT chambre_hotel_FK FOREIGN KEY (cham_hot_num) REFERENCES hotel(hot_num);
+
+ALTER TABLE reservation
+ADD CONSTRAINT reservation_chambre_FK FOREIGN KEY (reser_cham_num) REFERENCES chambre(cham_num),
+ADD CONSTRAINT reservation_client_FK FOREIGN KEY (reser_cli_num) REFERENCES Client(cli_num);
