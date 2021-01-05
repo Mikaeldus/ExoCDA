@@ -1,0 +1,11 @@
+
+Reflexion : 
+
+Avant l'insertion j'ai modifier le type TINYINT car impossible à inserer une valeur supérieur à un type qui ne prend que de 0 à 255.
+
+Changer le placement du champ UNIMES dans la table produits et le champ NUMFOU de la table vente.
+
+Je pense qu'il faut commencer à alimenter  produit.csv > "la table fournies"> "la table entcom">  "la table ligcom"> vente.csv 
+
+phase 1 : importation du fichier produit.csv en commande ";"
+phase 2 : table fournies / table entcom / importation de fichier vente.csv en ";" 

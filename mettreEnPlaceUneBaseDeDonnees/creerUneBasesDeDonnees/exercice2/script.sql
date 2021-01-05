@@ -49,8 +49,3 @@ ADD CONSTRAINT chambre_hotel_FK FOREIGN KEY (cham_hot_num) REFERENCES hotel(hot_
 ALTER TABLE reservation
 ADD CONSTRAINT reservation_chambre_FK FOREIGN KEY (reser_cham_num) REFERENCES chambre(cham_num),
 ADD CONSTRAINT reservation_client_FK FOREIGN KEY (reser_cli_num) REFERENCES Client(cli_num);
-
-
-
-
- 
