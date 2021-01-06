@@ -1,8 +1,8 @@
 CREATE DATABASE papyrus; USE papyrus;
 
 CREATE TABLE vente(
+	 numfou INT NOT NULL,
     codart CHAR(4) NOT NULL,
-    numfou TINYINT NOT NULL,
     delliv SMALLINT NOT NULL,
     qte1 INT NOT NULL,
     prix1 DECIMAL(9,2) NOT NULL,
@@ -16,20 +16,21 @@ CREATE TABLE vente(
 CREATE TABLE produit(
     codart CHAR(4) NOT NULL PRIMARY KEY,
     libart VARCHAR(30) NOT NULL,
+    unimes CHAR(5) NOT NULL,
     stkale INT NOT NULL,
     stkphy INT NOT NULL,
-    qteann INT NOT NULL,
-    unimes CHAR(5) NOT NULL
+    qteann INT NOT NULL
 );
 
 CREATE TABLE fournis(
-    numfou TINYINT NOT NULL PRIMARY KEY,
+    numfou INT NOT NULL PRIMARY KEY,
     nomfou VARCHAR(25) NOT NULL,
     ruefou VARCHAR(50) NOT NULL,
     posfou CHAR(5) NOT NULL,
     vilfou VARCHAR(30) NOT NULL,
     confou VARCHAR(15) NOT NULL,
-    satisf TINYINT(10)
+    satisf tinyint(4) DEFAULT NULL,
+    CHECK (`satisf` >=0 AND `satisf` <=10)
 );
 
 CREATE TABLE ligcom(
@@ -46,8 +47,8 @@ CREATE TABLE ligcom(
 CREATE TABLE entcom(
     numcom INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     obscom VARCHAR(50),
-    datcom DATETIME NOT NULL,
-    numfou TINYINT
+    datcom DATETIME NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+    numfou INT
 );
 
 ALTER TABLE ligcom
