@@ -12,24 +12,50 @@
 
 -- La transaction est-elle terminée ?
 
--- non car il faut soit faire un commit ou un rollback 
+-- oui car c'est en auto commit 
 
 -- -- Comment rendre la modification permanente ? 
-en fesant :
+en fesant : 1er utilisateur
+SET autocommit=0;
 START TRANSACTION;
 UPDATE fournis  SET nomfou= 'GROSBRIGAND' WHERE numfou=120;
+
+on verifie avec : avec les deux utilisateurs
+SELECT nomfou FROM fournis WHERE numfou=120;
+le premier est ok, le second la modification n'y est pas
+
+On commit avec le 1er utilisateur
 COMMIT;
 
-on verifie avec :
-SELECT nomfou FROM fournis WHERE numfou=120
+ on reverifie avec le 2eme est normalement c'est ok
+
 
 -- Comment annuler la transaction ?
-en fesant:
-ROLLBACK;
+en fesant : 1er utilisateur
+SET autocommit=0;
+START TRANSACTION;
+UPDATE fournis  SET nomfou= 'GROSBRIGAND' WHERE numfou=120;
 
-on verifie avec :
-SELECT nomfou FROM fournis WHERE numfou=120
+on verifie avec : avec les deux utilisateurs
+SELECT nomfou FROM fournis WHERE numfou=120;
+le premier est modifier, le second la modification n'y est pas
+
+On rollback avec le 1er utilisateur
+ROOLBACK;
+
+ on reverifie avec le 1er et le 2 eme est normalement c'est remis avant la modification
+
+
 
 -- exercice2 
 
+SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+START TRANSACTION;
+UPDATE fournis  SET nomfou= 'GROSBRIGAND' WHERE numfou=120;
+on verifie avec : 
+SELECT nomfou FROM fournis WHERE numfou=120;
+commit; 
+SET TRANSACTION ISOLATION LEVEL READ COMMITTED;
 
+Pour s'affranchir des anomalies de lectures « sales », il suffit de placer la transaction au niveau d'isolation READ COMMITTED. 
+Cela met en œuvre des verrous sur les lectures empêchant que la modification des lignes ne soit commise pendant la lecture.
