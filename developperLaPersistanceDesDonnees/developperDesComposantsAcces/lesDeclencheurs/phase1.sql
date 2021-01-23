@@ -104,6 +104,8 @@ END|
 DELIMITER ;
 
 -- Ce trigger ne fonctionne que lorsque l'on ajoute des produits dans la commande, les modifications ou suppressions ne permettent pas de recalculer le total. Modifiez le code ci-dessus pour faire en sorte que la modification ou la suppression de produit recalcul le total de la commande.
+-- Un champ remise était prévu dans la table commande. Prenez en compte ce champ dans le code de votre trigger.
+
 DELIMITER |
 CREATE TRIGGER maj_total AFTER INSERT ON lignedecommande
     FOR EACH ROW
@@ -112,7 +114,7 @@ CREATE TRIGGER maj_total AFTER INSERT ON lignedecommande
         DECLARE tot DOUBLE;
         SET id_c = NEW.id_commande;
         SET tot = (SELECT sum(prix*quantite) FROM lignedecommande WHERE id_commande=id_c); 
-        UPDATE commande SET total=tot WHERE id=id_c;
+        UPDATE commande SET total= ((tot * remise) / 100)  WHERE id=id_c;
 END|
 DELIMITER ;
 
@@ -124,7 +126,7 @@ CREATE TRIGGER maj_total AFTER update ON lignedecommande
         DECLARE tot DOUBLE;
         SET id_c = NEW.id_commande;
         SET tot = (SELECT sum(prix*quantite) FROM lignedecommande WHERE id_commande=id_c); 
-        UPDATE commande SET total=tot WHERE id=id_c;
+        UPDATE commande SET total= ((tot * remise) / 100) WHERE id=id_c;
 END|
 DELIMITER ;
 
@@ -136,11 +138,11 @@ CREATE TRIGGER maj_total AFTER DELETE ON lignedecommande
         DECLARE tot DOUBLE;
         SET id_c = OLD.id_commande;
         SET tot = (SELECT sum(prix*quantite) FROM lignedecommande WHERE id_commande=id_c); 
-        UPDATE commande SET total=tot WHERE id=id_c;
+        UPDATE commande SET total= ((tot * remise) / 100) WHERE id=id_c;
 END|
 DELIMITER ;
 
--- Un champ remise était prévu dans la table commande. Prenez en compte ce champ dans le code de votre trigger.
+
 
 
 
