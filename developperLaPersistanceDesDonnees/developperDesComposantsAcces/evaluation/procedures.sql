@@ -18,3 +18,28 @@ DELIMITER ;
 CALL northwind.requete9('le nom du fournisseur');
 
 
+-- Mise en place d'une règle de gestion
+-- Décrivez par quel moyen et comment vous pourriez implémenter la règle de gestion suivante.
+
+-- Pour tenir compte des coûts liés au transport, on vérifiera que pour chaque produit d’une commande, le client réside dans le même pays que le fournisseur du même produit
+DELIMITER | 
+
+CREATE TRIGGER insert_produit BEFORE INSERT ON `order details` 
+
+FOR EACH ROW 
+
+BEGIN     
+    DECLARE Pays_fournis VARCHAR (15);     
+    DECLARE Pays_client VARCHAR (15);  
+-- Je déclare les valeurs qui doivent êtres mises à jour avec des sous-requetes   
+    SET Pays_fournis = (SELECT Country FROM Suppliers WHERE SupplierID = (SELECT SupplierID FROM Products WHERE ProductID = NEW.ProductID));     
+    SET Pays_client = (SELECT Country FROM Customers WHERE CustomerID = (SELECT CustomerID FROM Orders WHERE OrderID = NEW.OrderID ));   
+
+IF Pays_fournis != Pays_client 
+THEN     
+SIGNAL SQLSTATE '40000' SET MESSAGE_TEXT = 'Impossible de rajouter ce produit';     
+END IF; 
+
+END | 
+
+DELIMITER ;  
