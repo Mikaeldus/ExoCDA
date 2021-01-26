@@ -31,7 +31,7 @@ FOR EACH ROW
 BEGIN     
     DECLARE Pays_fournis VARCHAR (15);     
     DECLARE Pays_client VARCHAR (15);  
--- Je déclare les valeurs qui doivent êtres mises à jour avec des sous-requetes   
+ 
     SET Pays_fournis = (SELECT Country FROM Suppliers WHERE SupplierID = (SELECT SupplierID FROM Products WHERE ProductID = NEW.ProductID));     
     SET Pays_client = (SELECT Country FROM Customers WHERE CustomerID = (SELECT CustomerID FROM Orders WHERE OrderID = NEW.OrderID ));   
 
