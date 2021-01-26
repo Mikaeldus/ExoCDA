@@ -1,0 +1,54 @@
+Donnez une définition de l'agilité :
+
+ L’agilité se distingue également en favorisant le travail d'équipe, l'auto‐organisation et la responsabilisation.
+ Ceci ouvre aussi plus de collaboration avec le client plutot que la contractualisation des relations.
+ Résumer :
+ Nouvelle méthode, plus de relation client, travaille organiser en binome, plus de responsabilisation individuelle et en equipe, prototype en environ 4 semaines, 
+ le client est beaucoup plus present avec l'equipe.
+
+-----------------------------------------------------------------------------------------------------
+
+ Pourquoi l'Extreme Programming ? 
+
+ Beaucoup plus simple, pour cibler et revenir sur quelques choses du projet en cas d'erreur ou de demande du client, le travail est aussi plus cibler part binomes.
+
+-----------------------------------------------------------------------------------------------------
+
+ Quels avantages y a-t'il à utiliser SCRUM ?
+
+Il a fait ces preuvres, il utilise une conduite de projet basés sur des valeurs et des principes agiles.
+il permet de definir des activités qui permette au client d'etudier, de guider et d'influencer le travail d'equipe de developpement au cours de sa progression.
+Cela permet aussi à pouvoir mieux organiser le temp et les imprevu pendant le developpment.
+
+-----------------------------------------------------------------------------------------------------
+
+Sprint et intégration continue, expliquez le fonctionnement de SCRUM :
+
+Grace au Stories(qui sont les besoins du client), l'equipe se mobilisent et organise leurs taches pour effectuer un sprint qui est definis au préalable, ils s'organisent, 
+ils choissisent leurs taches au fil du temps et de leur avancement pendant le sprint.
+Pendant un sprint il y a plusieurs rôles à definir, mais il n'ya pas de chef de projet juste quelqu'un qui prend le titre "Scrum Master" c'est l'equivalent d'animateur de projet, 
+il est la pour s'assurer de la bonne marche du sprint.
+Il y a aussi le rôle des reunion quotidienne appellé Daily Standup ou Daily Scrum, c'est pour avoir les faits de la veille et les objectifs du jour pour chaques membres de l'equipe.
+Cela permet au Scrum Master d'organiser en cas d'imprevu et de pouvoir reagir rapidement.
+
+-----------------------------------------------------------------------------------------------------
+
+TDD :(Test Driven Development), recherchez des informations pour expliquer le principe.
+
+Le Test Driven Development et une stratégie de conception.
+Ce sont des scénario creer part les developpeur pendant leur projet, ils sont très rapide et permettent de contrôler la qualité du code,
+et de pouvoir implementer le meilleur code possible pendant le developpement ( bien sur le scénario est ecris avec le meme code que le projet).   
+
+ils existent trois phases :
+
+"Phase rouge" : dans cette phase, vous vous mettez à la place de l’utilisateur. Celui-ci veut pouvoir utiliser simplement le code. Vous écrivez donc un test, 
+qui contient des composants qui n’ont pas encore été implémentés. 
+Vous devez décider quels éléments sont réellement indispensables pour que le code soit fonctionnel.
+
+"Phase verte" : supposons que le test échoue et qu’il est marqué en rouge.Vous endossez maintenant le rôle du programmeur et essayez de trouver une solution simple. 
+Attention : n’écrivez que le strict nécessaire. Vous l’intégrez dans le code de production afin que le test soit marqué en vert.
+
+"Refactoring" : dans cette étape, le code de production est littéralement « rangé » et sa structure améliorée. 
+Cela signifie que vous devez le compléter et le restructurer pour qu’il soit élégant et compréhensible du point de vue du développeur. 
+Par exemple, supprimer la duplication des codes et atteindre un niveau professionnel.
+
