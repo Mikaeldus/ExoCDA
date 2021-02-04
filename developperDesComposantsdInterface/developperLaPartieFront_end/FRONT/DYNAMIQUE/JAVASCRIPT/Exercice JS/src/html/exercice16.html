@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="../js/exercice16.js"></script>
+    <title>Document</title>
+    <style>
+        .hint {
+            color: red;
+            font-size : 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutter">
+          <div class="col-md-6 mb-10">
+   
+    <section>
+    <button><a href="../../index.html">Retour à l'accueil</a></button><br><br><br>
+    </section>
+
+    
+    
+    
+  
+            <form action="http://bienvu.net/script.php" method="POST" onSubmit="return verif(this)">
+                
+                <div class="form-row">
+                
+                <h4 class="col-12"><strong>Vos coordonnées :</strong></h4>
+
+                <p class="col-12"><strong>* Ces zones sont obligatoires pour envoyer le formulaire.</strong></p>
+    
+                <div class="col-md-12 mb-6">
+                  <label for="validationDefault01"><strong>Société :</strong></label>
+                  <input type="text" class="form-control" id="inputSociete" name="Nom de la société" value="" >
+                  <span id="missSociete" class="hint missSociete"></span>
+                </div>
+              </div>
+
+
+              <div class="form-row">
+              <div class="col-md-12 mb-6">
+                <label for="validationDefault02"><strong> Personne à contacter :</strong></label>
+                <input type="text" class="form-control" id="inputPersonneAContacter" name="Personneacontacter" value="" >
+                <span id="missPersonneacontacter" class="hint missPersonneacontacter"></span>
+              </div>
+            </div>
+    
+              <div class="form-row">
+                <div class="col-md-12 mb-6">
+                    <div><strong>Adresse de l'entreprise :</strong></div>
+                    <textarea name="Adresse de l'entreprise" rows="3" cols="40" class="form-control" id="validationDefault03" ></textarea>
+                    <span id="missAdresse" class="hint missAdresse"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12 mb-6">
+                  <label for="validationDefault07"><strong>Code Postale</strong></label>
+                  <input type="number" class="form-control" id="inputCodePostal" name="Code-postale" >
+                  <span id="missCodePostale" class="hint missCodePostale"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+    
+                <div class="col-md-12 mb-6">
+                  <label for="validationDefault06"><strong>Ville</strong></label>
+                  <input type="text" class="form-control" id="inputVille" name="Ville" >
+                  <span id="missVille" class="hint missVille"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12 mb-6">
+                  <label for="validationDefault04"><strong>E-mail</strong></label>
+                  <input type="email" class="form-control" id="inputEmail" name="E-mail" value="" >
+                  <span id="missMail" class="hint missMail"></span>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-12 mb-6">
+                  <label for="validationDefault04"><strong>Téléphone :</strong></label>
+                  <input type="number" class="form-control" id="validationDefault07" name="E-mail" value="" >
+                  <span id="missTel" class="hint missTel"></span>
+                </div>
+            </div>
+    
+              
+
+            
+              
+    
+              <div class="form-row">
+    
+                <div class="col-md-12 mb-6">
+    
+                  <label for="Sujets"><strong>Sélectionnez l'environnement technique du projet :</strong></label>
+                  <select name="Sujet" id="validationDefault08" required>
+                    <option value="" disabled selected>Choisissez</option>
+                    <option value="Access">Access</option>
+                    <option value="Java">Java</option>
+                    <option value="Delphi">Delphi</option>
+                    <option value="Windev">Windev</option>
+                    <option value="Visual Basic">Visual Basic</option>
+                    <option value="Power Builder">Power Builder</option>
+                    <option value="Internet">Internet</option>
+                    <option value="Intranet">Intranet</option>
+                    <option value="Windows NT">Windows NT</option>
+                    <option value="Unix">Unix</option>
+                    <option value="SQL Server">SQL Server</option>
+                    <option value="Oracle">Oracle</option>
+                    <option value="Autres">Autres..</option>
+                  </select><br>
+                  <textarea name="Commentaires" rows="4" cols="40" id="validationDefault09"></textarea>
+    
+                </div>
+              </div>
+              <br>
+    
+              <div class="col-md-12 mb-6">
+                <div class="form-group">
+                  <div class="form-check">
+                    <button id="btn-verif-formulaire" class="btn btn-primary" type="submit">Envoyer</button>
+                    <input class="btn btn-primary" type="reset" value="Effacer">
+                  </div>
+                </div>
+              </div>
+            </form>
+    
+    
+          </div>
+        </div>
+      </div>
+    
+    
+      <!-- --------------Formulaire------------- -->
+    
+
+    
+
+</body>
+</html>

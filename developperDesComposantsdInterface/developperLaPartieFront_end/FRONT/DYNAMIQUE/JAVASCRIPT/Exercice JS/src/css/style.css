@@ -1,0 +1,14 @@
+
+
+.exercices-sections {
+    margin : 5px 5px 5px 5px;
+    padding: 10px;
+    display: flex;
+}
+
+.nom-de-lexo {
+    align-items: center;
+    display: flex;
+    margin-left: 25px;
+    font-size: 21px;
+}

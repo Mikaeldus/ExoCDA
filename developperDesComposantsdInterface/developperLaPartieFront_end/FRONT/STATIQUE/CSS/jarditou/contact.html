@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<!-- ----------HEAD--------- -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAGE CONTACT</title>
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<!-- ---------HEAD---------- -->
+
+<!-- --------------Body------------- -->
+
+<body>
+
+
+    <!-- --------------header------------- -->
+    <div id="imgblock">
+        <img src="./src/img/jarditou_logo.jpg" alt="jarditou_logo" title="jarditou_logo" id="img">
+    </div>
+    <!-- ------------ la div permet de regler le soucis d'affichage de l'img ----------- -->
+
+    <header>
+        <h1>Tout le jardin</h1>
+    </header>
+
+    <!-- --------------header------------->
+
+    <!-- --------------Menu------------- -->
+    <nav>
+        <ul>
+            <li><a href="./index.html" title="Accueil">Accueil</a> </li>
+            <!--renvoit au paragraphe a la page Accueil-->
+            <li><a href="./tableau.html" title="Tableau">Tableau</a></li>
+            <li><a href="./contact.html" title="Formulaire">Formulaire</a></li>
+        </ul>
+    </nav>
+    <!-- --------------Menu------------- -->
+
+
+
+    <!-- --------------IMG------------- -->
+    <img src="./src/img/promotion.jpg" alt="promotion" title="promotion" id="promotion">
+    <!-- --------------IMG------------- -->
+
+
+    <!-- --------------Section------------- -->
+    <section id="colonnegauche">
+        <article>
+            <H2>Contact</H2>
+        </article>
+        <hr>
+        <!--Ceci est un trait tout simple-->
+
+        <!-- --------------Colonnegauche------------- -->
+
+        <form action="http://bienvu.net/script.php" method="POST">
+            <p>* Ces zones sont obligatoire</p>
+            <fieldset>
+                <legend>Coordonnées</legend>
+                <label for="nom">Votre Nom*:</label><input type="text" name="nom" id="nom" required="required"><br>
+                <label for="prénom">Votre Prénom*:</label><input type="text" name="prénom" id="prénom"
+                    required="required"><br>
+                Sexe*:
+                <input type="radio" name="sexe" value="f" required="required">Masculin
+                <input type="radio" name="sexe" value="m" required="required">Féminin<br>
+                <label for="date">Date de naissance*:</label><input type="date" name="ddn" id="date"
+                    required="required"><br>
+                <label for="code_postale">Code postale*:</label><input type="number" name="code_postale"
+                    id="code_postale" required="required"><br>
+                <label for="adresse">Adresse:</label><input type="text" name="adresse" id="adresse"><br>
+                <label for="email">Email:</label><input type="email" name="email" id="email"><br>
+            </fieldset>
+            <fieldset>
+                <legend>Votre demande</legend>
+                <label for="Sujet">Sujet*</label>
+                <select id="Sujet" required>
+                    <option value="" selected>Veuillez séléctionner un sujet</option>
+                    <option value="1">Mes commandes</option>
+                    <option value="2">Question sur un produit</option>
+                    <option value="3">Réclamation</option>
+                    <option value="4">Autres</option>
+                </select><br>
+                Votre question* :
+                <textarea name="Votre question*" rows="2" cols="20" required="required"></textarea>
+            </fieldset>
+            <input type="checkbox" name="traitement informatique autoriser part l'utilisateur" value="Autoriser"
+                required>* J'accepte le traitement informatique de ce formulaire<br>
+            <button type="submit">Envoyer</button>
+            <input type="reset" value="annuler">
+        </form>
+    </section>
+    <!-- --------------Colonnegauche------------- -->
+
+    <!-- ------------Colonnedroite-------------->
+    <section id=colonnedroite>
+        <p>[COLONNE DROITE]</p>
+    </section>
+
+    <!--------------Colonnedroite------------ -->
+
+    <!-- --------------Footer------------- -->
+    <!-- en attente d'id !!! -->
+    <footer>
+        <ul>
+            <li><a href="#" title="Mention légales">Mention légales</a></li>
+            <li><a href="#" title="Horaires">Horaires</a></li>
+            <li><a href="#" title="Plan du site">Plan du site</a></li>
+        </ul>
+    </footer>
+    <!-- en attente d'id !!! -->
+    <!-- --------------Footer------------- -->
+
+
+
+
+</body>
+<!-- --------------Body------------- -->
+
+</html>
