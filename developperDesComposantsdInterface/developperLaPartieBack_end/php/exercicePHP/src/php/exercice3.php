@@ -39,7 +39,7 @@
         <thead>
         <tr>
             <th></th>
-<!--            //Grace a la boucle avec le nombre1 je determine le nombre de th.-->
+            <!--            //Grace a la boucle avec le nombre1 je determine le nombre de th.-->
             <?php
             for($nombre1 = 0; $nombre1 <= 12; $nombre1++){
                 ?>
@@ -53,7 +53,7 @@
         </thead>
 
         <tbody>
-<!--        Grace a la boucle avec le nombre2 je determine le nombre de th.-->
+        <!--        Grace a la boucle avec le nombre2 je determine le nombre de th.-->
         <?php
         for($nombre2 =0; $nombre2 <=12; $nombre2++){
             ?>
@@ -61,7 +61,7 @@
                 <th>
                     <?= $nombre2 ?>
                 </th>
-<!--                // Je creer une boucle qui affiche le resultat tant que nb1 est <= 12.-->
+                <!--                // Je creer une boucle qui affiche le resultat tant que nb1 est <= 12.-->
                 <?php
                 for($nombre1 = 0; $nombre1 <=12; $nombre1++){
                     ?>
