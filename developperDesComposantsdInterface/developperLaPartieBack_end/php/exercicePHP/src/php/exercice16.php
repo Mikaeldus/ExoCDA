@@ -39,29 +39,16 @@
 
 
 <div>
-    <h3>Comment déterminer si une année est bissextile ?</h3>
-    <?php
-    //    Je determine ma variable date
-    $date = new DateTime();
-
-    //    J'utilise une boucle qui qui va prendre +1 des que $i = 4.' pour les année bissextile.
-    for ($i = 0; $i < 4; $i++) {
-//        je modify la date pour qu'elle prenne 1 years part boucle
-        $date->modify('+1 years');
-//        Lorsque le if retourne 1
-        if ($date->format('L') == 1) {
-            ?>
-            L'année <?= $date->format('Y') ?> sera la prochaine année bissextile.
-            <?php
-        }
-    }
-    ?>
-
-
+    <h3>Que s'est-il passé le 1000200000.</h3><br>
+<!--    Je defini la date l'horaire et le fuseau -->
+    <?php echo "". date(DATE_ATOM, mktime(1, 0, 0, 0, 2, 00000)). ""; ?>
 </div>
+
 
 </body>
 </html>
+
+
 
 
 

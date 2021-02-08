@@ -45,7 +45,7 @@
     //    Je creer ma function Array
     function sum($array)
     {
-//        je determineune variable qui donne la somme du tableau
+//        je determine une variable qui donne la somme du tableau
         $result = array_sum($array);
 //        je retourne le resultat avec une variable
         return $result;

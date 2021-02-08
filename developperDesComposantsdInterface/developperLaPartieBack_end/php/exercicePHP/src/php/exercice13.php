@@ -39,24 +39,27 @@
 
 
 <div>
-    <h3>Comment déterminer si une année est bissextile ?</h3>
+    <h3>Montrez que la date du 32/17/2019 est erronée.</h3><br>
     <?php
-    //    Je determine ma variable date
-    $date = new DateTime();
+    $date = "32/17/2019";
+    //    Commande avec DateTime
+    $testDate = DateTime::createFromFormat('d/m/Y', $date); // On analyse une date en string selon le format demandé
+    //    On recupere les erreurs de l'objet DateTime dans un tableau'
+    $errors = $testDate->getLastErrors();
 
-    //    J'utilise une boucle qui qui va prendre +1 des que $i = 4.' pour les année bissextile.
-    for ($i = 0; $i < 4; $i++) {
-//        je modify la date pour qu'elle prenne 1 years part boucle
-        $date->modify('+1 years');
-//        Lorsque le if retourne 1
-        if ($date->format('L') == 1) {
-            ?>
-            L'année <?= $date->format('Y') ?> sera la prochaine année bissextile.
-            <?php
-        }
-    }
+    if ($errors['warning_count'] >= 1)
+    {
     ?>
-
+    La date du <?= $date ?> est erronée.
+</div>
+<?php
+}
+else {
+    ?>
+    La date du <?= $date ?> est valide.
+    <?php
+}
+?>
 
 </div>
 

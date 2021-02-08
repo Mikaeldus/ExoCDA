@@ -113,7 +113,7 @@
 
     <section class="exercices-sections" id="">
         <button class="btn btn-primary" >
-            <a style="color: #fff" href="./src/php/exercice9.php">Exercice 12 </a>
+            <a style="color: #fff" href="./src/php/exercice12.php">Exercice 12 </a>
         </button>
         <span class="nom-de-lexo" style="align-items: center;"> Comment déterminer si une année est bissextile ? </span>
     </section>
@@ -145,5 +145,16 @@
         <span class="nom-de-lexo" style="align-items: center;"> Que s'est-il passé le 1000200000 </span>
     </section>
 </div>
+
+<div>
+    <h2>Les fichiers</h2>
+    <section class="exercices-sections" id="">
+        <button class="btn btn-primary" >
+            <a style="color: #fff" href="./src/php/exercice17.php">Exercice 17 </a>
+        </button>
+        <span class="nom-de-lexo" style="align-items: center;">  </span>
+    </section>
+
+
 </body>
 </html>
