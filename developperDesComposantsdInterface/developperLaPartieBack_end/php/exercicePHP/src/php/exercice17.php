@@ -37,17 +37,60 @@
 <button><a href="../../index.php">Retour à l'accueil</a></button>
 <br><br>
 
-
+<h3>Écrire un programme qui lit ce fichier et qui construit une page web contenant une liste de liens hypertextes.</h3>
+<br>
 <div>
-    <h3>Test Ouverture/Ecriture/Fermeture</h3><br>
+    <?php
+    //    J'indique l'aborescence du fichier et je l'ouvre'
+    $fichier = file("../docs/liens.txt");
+    //    Je compte chaque ligne du fichier
+    $total = count($fichier);
 
-<!--    Création d'une fichier essai.txt manuellement -->
-<!--    Ensuite à l'ouverture de la page le code PHP se lance tous seul.-->
-    <?php $fp = fopen("../../essai.txt", "a"); ?>
-    <?php $myVar = "Bonjour tout le monde"; ?>
-    <?php fputs($fp, $myVar); ?>
-    <?php fclose($fp); ?>
+    //    Je creer une boucle tant que i n'est pas egale au nombre de ligne elle continu d'afficher la ligne echo
+    for ($i = 0; $i < $total; $i++) {
+        echo $fichier[$i] . "<br>";
+    }
+    ?>
 </div>
+<br>
+
+<h3>Récupération d'un fichier distant</h3><br>
+
+
+<table>
+    <thead>
+    <tr>
+        <th scope="" col">Surname</th>
+        <th scope="" col">Firstname</th>
+        <th scope="" col">Email</th>
+        <th scope="" col">Phone</th>
+        <th scope="" col">City</th>
+        <th scope="" col">State</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <?php
+    $i = 0;
+    $file = file('http://bienvu.net/misc/customers.csv');
+    foreach ($file as $key => $line) {
+        $tab[$i] = explode(",", $line);
+        ?>
+
+        <tr>
+            <th><?php echo $tab[$i][0]; ?></th>
+            <th><?php echo $tab[$i][1]; ?></th>
+            <th><?php echo $tab[$i][2]; ?></th>
+            <th><?php echo $tab[$i][3]; ?></th>
+            <th><?php echo $tab[$i][4]; ?></th>
+            <th><?php echo $tab[$i][5]; ?></th>
+        </tr>
+        <?php
+        $i++;
+    }
+    ?>
+    </tbody>
+</table>
 
 
 </body>

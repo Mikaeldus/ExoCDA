@@ -154,7 +154,31 @@
         </button>
         <span class="nom-de-lexo" style="align-items: center;">  </span>
     </section>
+</div>
 
+<div>
+    <h2>Les formulaire</h2>
+    <section class="exercices-sections" id="">
+        <button class="btn btn-primary" >
+            <a style="color: #fff" href="../../contact.php">Exercice 18 </a>
+        </button>
+        <span class="nom-de-lexo" style="align-items: center;">  </span>
+    </section>
+</div>
+
+<div class= "row">
+    <div class = "col-12">
+        <h2>L'upload</h2>
+        <form action="./upload.php" method="POST" enctype="multipart/form-data">
+            <fieldset>
+                <div>
+                    <input type="file" name="file" class="btn btn-primary" id="file" placeholder="Sélectionnez ...">
+                    <input type="submit" class="btn btn-primary" name="submit" id="submit" value="Ajouter">
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
