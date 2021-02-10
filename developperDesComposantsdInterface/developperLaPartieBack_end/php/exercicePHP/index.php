@@ -160,7 +160,7 @@
     <h2>Les formulaire</h2>
     <section class="exercices-sections" id="">
         <button class="btn btn-primary" >
-            <a style="color: #fff" href="../../contact.php">Exercice 18 </a>
+            <a style="color: #fff" href="./src/php/contact.php">Exercice 18 </a>
         </button>
         <span class="nom-de-lexo" style="align-items: center;">  </span>
     </section>
@@ -169,7 +169,7 @@
 <div class= "row">
     <div class = "col-12">
         <h2>L'upload</h2>
-        <form action="./upload.php" method="POST" enctype="multipart/form-data">
+        <form action="./src/php/upload.php" method="POST" enctype="multipart/form-data">
             <fieldset>
                 <div>
                     <input type="file" name="file" class="btn btn-primary" id="file" placeholder="Sélectionnez ...">
@@ -178,6 +178,26 @@
             </fieldset>
         </form>
     </div>
+</div>
+
+<div>
+    <h2>Connection a une BDD</h2>
+    <section class="exercices-sections" id="">
+        <button class="btn btn-primary" >
+            <a style="color: #fff" href="./src/php/db.php">Exercice 19 </a>
+        </button>
+        <span class="nom-de-lexo" style="align-items: center;">  </span>
+    </section>
+</div>
+
+<div>
+    <h2>Demander les details dans une table</h2>
+    <section class="exercices-sections" id="">
+        <button class="btn btn-primary" >
+            <a style="color: #fff" href="./src/php/details_disc.php?disc_id=?">Exercice 20 </a>
+        </button>
+        <span class="nom-de-lexo" style="align-items: center;">  </span>
+    </section>
 </div>
 
 </body>
