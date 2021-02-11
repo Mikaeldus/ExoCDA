@@ -1,49 +1,54 @@
 <?php
- include('./src/php/dbconnect.php');
+include('./include/dbconnect.php');
 $requete = $db->prepare("select * from artist JOIN disc ON artist.artist_id = disc.artist_id ORDER BY artist_name");
 $requete->execute();
+include('./include/header.php');
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="src/css/style.css">
-    <script src="./main.js"></script>
-    <title>Record</title>
-</head>
-<body>
-<table>
+
+
+
+<div class="row col-md-12 mb-12">
+<div class="container-fluid">
+
+    <h1 class="h1" style="font-size: 60px">Liste des disques</h1>
+
+<table align="align-center">
 <thead>
 <tr>
     <th></th>
-
-    <th>Album</th>
-    <th>Artiste</th>
-    <th>Labelle</th>
-    <th>Année</th>
-    <th>Genre</th>
-
 </tr>
 </thead>
+
 <tbody>
+
 <?php
 while ($row = $requete->fetch(PDO::FETCH_OBJ)){
     ?>
- <tr>
-     <td><img class="photo" src="./src/img/<?= $row->disc_picture ?>"></td>
-     <td><?= $row->disc_title ?></td>
-     <td><?= $row->artist_name ?></td>
-     <td><?= $row->disc_label ?></td>
-     <td><?= $row->disc_year ?></td>
-     <td><?= $row->disc_genre ?></td>
- </tr>
+
+<tr>
+    <td><img class="img-fluid img-reponsive  col-md-6 mb-12"  src="./src/img/<?= $row->disc_picture ?>" align="left">
+        <p class="art"> <?= $row->disc_title ?></p>
+        <p class="art"> <?= $row->artist_name ?></p>
+        <p class="art"><u>Labelle :  </u> <?= $row->disc_label ?></p>
+        <p class="art"><u>Année :  </u><?= $row->disc_year ?></p>
+        <p class="art"><u>Genre :  </u> <?= $row->disc_genre ?></p>
+        <div>
+        <form action="details.php" method='get' class="bou">
+            <input type="hidden" name='id' value=<?= $row->disc_id ?>>
+            <input type='submit' class="btn btn-secondary btn-dark "  value='Détails'></form>
+        </div>
+    </td>
+</tr>
+
 <?php
 }
 ?>
+
 </tbody>
 </table>
-</body>
+</div>
+</div>
 
-</html>
+<?php
+include('./include/footer.php');
+?>

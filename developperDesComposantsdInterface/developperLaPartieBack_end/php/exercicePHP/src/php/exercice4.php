@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* un peu de style  */
-        caption{
-            border-style:solid;
+        caption {
+            border-style: solid;
         }
-        table{
-            text-align:center;
-            border-style:solid;
+
+        table {
+            text-align: center;
+            border-style: solid;
         }
-        th{
-            border-style:solid;
-            background-color:red;
+
+        th {
+            border-style: solid;
+            background-color: red;
         }
-        td{
-            border-style:solid;
+
+        td {
+            border-style: solid;
         }
     </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="../js/exercice5.js"></script>
     <title>Document</title>
 </head>
@@ -30,7 +34,8 @@
 
 </script>
 
-<button><a href="../../index.php">Retour à l'accueil</a></button><br><br>
+<button><a href="../../index.php">Retour à l'accueil</a></button>
+<br><br>
 
 
 <?php
@@ -54,12 +59,14 @@ $tab = array(
 <h3>Calendrier Classique</h3><br>
 <table>
     <thead>
-<!--    je defini l'entete da l'array-->
-    <td><h5>Mois</h5></td>
-    <td><h5>Jours</h5></td>
+    <!--    je defini l'entete da l'array-->
+    <tr>
+        <th>Mois</th>
+        <th>Jours</th>
+    </tr>
     </thead>
     <tbody>
-<!--    je recupere les clefs et les valeurs pour remplir mes champs, pour mettre sur la meme ligne j'indique que valeur = clef-->
+    <!--    je recupere les clefs et les valeurs pour remplir mes champs, pour mettre sur la meme ligne j'indique que valeur = clef-->
     <?php foreach ($tab as $key => $value) { ?>
         <tr>
             <td><?= $key ?></td>
@@ -75,13 +82,15 @@ $tab = array(
 <h3>Calendrier trier part nombre de jour croissant</h3><br>
 <table>
     <thead>
-    <td><h5>Mois</h5></td>
-    <td><h5>Jours</h5></td>
+    <tr>
+    <th>Mois</th>
+    <th>Jours</th>
+    </tr>
     </thead>
     <tbody>
-<!--    je recupere ma variable array et j'utilise un assort() pour ranger part ordre croissant -->
+    <!--    je recupere ma variable array et j'utilise un assort() pour ranger part ordre croissant -->
     <?php $tab = new ArrayObject($tab); ?>
-    <?php $tab ->asort(); ?>
+    <?php $tab->asort(); ?>
     <?php foreach ($tab as $value => $key) { ?>
         <tr>
             <td><?= $value ?></td>
@@ -91,8 +100,6 @@ $tab = array(
     <?php } ?>
     </tbody>
 </table>
-
-
 
 
 </body>

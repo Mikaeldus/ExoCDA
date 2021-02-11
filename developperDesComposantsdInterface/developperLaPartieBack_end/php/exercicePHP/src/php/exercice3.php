@@ -53,7 +53,7 @@
         </thead>
 
         <tbody>
-        <!--        Grace a la boucle avec le nombre2 je determine le nombre de th.-->
+        <!--        Grace a la boucle avec le nombre2 je determine le nombre de ligne.-->
         <?php
         for($nombre2 =0; $nombre2 <=12; $nombre2++){
             ?>
