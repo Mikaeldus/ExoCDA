@@ -48,7 +48,7 @@ if (isset($_POST['update'])) {
 //        Je defini le nom et l'extension pour l'INSERT dans la db.
         $nomImage = $upTitle . "." . $extension;
 
-        je prepare ma requete
+//        je prepare ma requete
         $request = "UPDATE disc SET disc_title = :upTitle, disc_year = :upYear, disc_label = :upLabel, disc_picture = :fichier, disc_genre = :upGender, disc_price = :upPrice, artist_id = :upArtist WHERE disc_id = :id ";
         $result = $db->prepare($request);
         $result->bindValue(':id', $id, PDO::PARAM_INT);

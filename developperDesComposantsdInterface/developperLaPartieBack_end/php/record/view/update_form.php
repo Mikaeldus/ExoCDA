@@ -16,7 +16,7 @@ $id = $_GET['id'];
             </div>
 
 
-            <form enctype="multipart/form-data" action="#" method="POST">
+            <form enctype="multipart/form-data" action="#" method="POST" >
                 <div class="row justify-content-center">
                     <div class="col-md-12">
                         <label class="font-weight-bold" for="artist_name">Titre :</label>
@@ -91,7 +91,7 @@ $id = $_GET['id'];
                     <p>
                         <label for="fichier" title="" class="col-form-label font-weight-bold">Jaquette :</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value=""/>
-                        <input name="fichier" type="file" id="fichier" class="form-control" required/>
+                        <input name="fichier" type="file" id="fichier" class="form-control" />
 
                     </p>
                 </fieldset>

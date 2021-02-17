@@ -11,9 +11,9 @@ include('../include/requeteDB.php');
 
     <section>
         <div class="col-12">
-            <div class="text-center">
-                <h2>Ajouter un album</h2>
 
+                <h2 style="text-align: center">Ajouter un album</h2>
+            <div class="row justify-content-center">
                 <form enctype="multipart/form-data" id="formAdd" action="" method="POST" onsubmit="return verif(this)">
                     <label class="col col-form-label font-weight-bold" for="artist_name">Artiste :</label>
 

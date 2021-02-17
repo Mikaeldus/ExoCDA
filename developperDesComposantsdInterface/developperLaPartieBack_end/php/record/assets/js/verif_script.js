@@ -111,3 +111,9 @@ function verifAuMoins1Char(motAVerif) {
         return false;
     }
 }
+
+
+
+
+
+
