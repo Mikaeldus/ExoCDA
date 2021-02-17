@@ -11,19 +11,21 @@ define('TARGET', '../src/img/');
 $message = array();
 
 
-
-
-
 /* Ajout d'un disque */
 //Je verifie si les champ sont remplit
 if (isset($_POST['submit'])) {
 
+//    j'inialise une variable pour mon tableau erreur'
     $tabError = array();
+
 //    J'utilise ma fonction pour verifier le fichier et je recupere le resultat dans une variable
     $tabError[] = verifUpload();
 
 
+//    -------------------------------
+//Je recupere les données reçu dans une variable
     $addTitle = $_POST['addTitle'];
+//Et je teste chaque variable avec une function, qui renvoient le resultat dans le taberror
     $tabError[] = regexText($addTitle);
 
 
@@ -46,14 +48,12 @@ if (isset($_POST['submit'])) {
     $addPrice = $_POST['addPrice'];
     $tabError[] = regexPrix($addPrice);
 
-
+//--------------------------
 
 //    je recupere l'extension'
-    $extension  = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
-//    Si $tabError est null alors on recupere le submit part champ
+    $extension = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
+//    Si $tabError est null alors on continu
     if ($tabError === "") {
-
-
 
 //        Je defini le nom et l'extension pour l'INSERT dans la db.
         $nomImage = $addTitle . "." . $extension;
@@ -82,12 +82,5 @@ if (isset($_POST['submit'])) {
         $message = $tabError;
     }
 }
-
-
-
-
-
-
-
 
 ?>

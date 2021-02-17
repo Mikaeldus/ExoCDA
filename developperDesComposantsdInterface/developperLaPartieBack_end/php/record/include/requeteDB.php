@@ -20,6 +20,21 @@ if($requete1->rowCount() == 0){
 $total = $requete1->rowcount();
 
 
+//requete pour les donnée dans l'index'
+$requeteIn = $db->prepare("select * from artist JOIN disc ON artist.artist_id = disc.artist_id ORDER BY artist_name");
+
+if (!empty($key) && !empty($value)) {
+    $requeteIn->bindParam(":" . $key . "", $value);
+} elseif (!empty($key) && !empty($value)) {
+
+    $requeteIn->bindValue(":" . $key . "", "%" . $value . "%");
+}
+$requeteIn->execute();
+while ($index = $requeteIn->fetch(PDO::FETCH_OBJ)) {
+    $row[] = $index;
+}
+
+
 
 //Page globale
 

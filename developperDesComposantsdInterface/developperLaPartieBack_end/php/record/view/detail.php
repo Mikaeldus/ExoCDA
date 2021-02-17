@@ -2,6 +2,7 @@
 include('../include/dbconnect.php');
 include('../include/header.php');
 include('../include/requeteDB.php');
+//Je recupere mon ID
 $id = $_GET['id'];
 
 ?>
@@ -60,7 +61,7 @@ while ($row = $requete4->fetch(PDO::FETCH_OBJ)) {
         <div class="row justify-content-center text-center">
             <div class="col-md-6 mb-3">
                 <p class="font-weight-bold"></p>
-                <img class="photo" src="../src/img/<?= $row->disc_picture ?>">
+                <img class="photo" alt="photo" title="photo" src="../src/img/<?= $row->disc_picture ?>">
             </div>
         </div>
         <div class="container">

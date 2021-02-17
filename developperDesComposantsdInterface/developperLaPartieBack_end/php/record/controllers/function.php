@@ -2,9 +2,6 @@
 
 //Pour chaque fonction je return un message pour indiquer le resultat.
 
-
-
-
 //Function pour l'upload du fichier.
 function saveFileSystem($nomImage) {
 
@@ -21,11 +18,6 @@ function saveFileSystem($nomImage) {
         return "Impossible de copié le fichier";
     }
 }
-
-
-
-
-
 
 //je crée une function pour verifier le fichier.
 function verifUpload() {
@@ -48,9 +40,6 @@ function verifUpload() {
         return 'L\'extension du fichier est incorrecte !';
     }
 }
-
-
-
 
 
 

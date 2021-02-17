@@ -16,7 +16,7 @@ $tabError1= array();
 //Je verifie si les champ sont remplit
 if (isset($_POST['update'])) {
 
-//    J'utilise ma fonction pour verifier  et je recupere le resultat dans une variable
+//    J'utilise ma fonction pour verifier  et je recupere le resultat dans mon array
     $tabError1[] = verifUpload();
 
     $upTitle = $_POST['upTitle'];
@@ -41,12 +41,14 @@ if (isset($_POST['update'])) {
 
 //    je recupere l'extension'
     $extension = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
-//    Si $tabError est null alors on recupere le submit part champ
+
+//    Si $tabError est null on continu
     if ($tabError1 === "") {
 
 //        Je defini le nom et l'extension pour l'INSERT dans la db.
         $nomImage = $upTitle . "." . $extension;
 
+        je prepare ma requete
         $request = "UPDATE disc SET disc_title = :upTitle, disc_year = :upYear, disc_label = :upLabel, disc_picture = :fichier, disc_genre = :upGender, disc_price = :upPrice, artist_id = :upArtist WHERE disc_id = :id ";
         $result = $db->prepare($request);
         $result->bindValue(':id', $id, PDO::PARAM_INT);
@@ -70,7 +72,5 @@ if (isset($_POST['update'])) {
         $message1 = $tabError1;
     }
 }
-
-
 //
 //?>

@@ -18,13 +18,13 @@ function verif(ajout) {
 
 
     if (addTitleIsOk && addLabelIsOk && addGenderIsOK && addYearIsOK && addPriceIsOK) {
-        // Tout est OK, on envoie le formulaire
-        console.log("Formulaire OK")
+        // Tout est OK, on return true
+        console.log("OK")
         return true;
 
     } else {
-        // Tout n'est pas OK, on n'envoie pas le formulaire
-        console.error("Formulaire Pas OK");
+        // Tout n'est pas OK, on envoi false
+        console.error("Pas OK");
         return false;
     }
 }
@@ -86,7 +86,7 @@ function verifGender(addGender) {
     }
 }
 
-// Ma function pour Verif le genre
+// Ma function pour Verif le prix
 function verifPrice(addPrice) {
     // je creer ma variable "isOk" qui est vérifier part ma function, si c'est bon elle renvoit true sinon else
     var isOK = verifAuMoins1Char(addPrice);

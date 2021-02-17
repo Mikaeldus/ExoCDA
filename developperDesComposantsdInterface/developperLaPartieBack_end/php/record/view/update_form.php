@@ -3,14 +3,8 @@ include('../include/dbconnect.php');
 include('../include/header.php');
 include('../controllers/update_script.php');
 include('../include/requeteDB.php');
+//Je recupere mon ID
 $id = $_GET['id'];
-
-if (!empty($message1)) {
-    echo '<p>', "\n";
-    echo "\t\t<strong>", htmlspecialchars($message1), "</strong>\n";
-    echo "\t</p>\n\n";
-}
-
 ?>
 
 <body>
@@ -103,7 +97,7 @@ if (!empty($message1)) {
                 </fieldset>
 
                 <div class="col-md-12 justify-content-center text-center">
-                    <img class="photo" src="../src/img/<?= $disc->disc_picture ?>" alt="">
+                    <img class="photo" title="photo" src="../src/img/<?= $disc->disc_picture ?>" alt="photo">
                 </div>
 
                 <div class="text-center">
@@ -117,5 +111,11 @@ if (!empty($message1)) {
 
 
 <?php
+if (!empty($message1)) {
+    echo '<p>', "\n";
+    echo "\t\t<strong>", htmlspecialchars($message1), "</strong>\n";
+    echo "\t</p>\n\n";
+}
+
 include('../include/footer.php');
 ?>

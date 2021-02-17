@@ -3,7 +3,6 @@ include('./include/dbconnect.php');
 include('./include/header.php');
 include('./include/requeteDB.php');
 
-
 ?>
 
 <!--navbar-->
@@ -17,75 +16,67 @@ include('./include/requeteDB.php');
 
 <!----body---->
 <body>
-<div class="container-fluid">
-
-    <section>
-
-        <!--    On declare la table -->
-        <table class="container-fluid">
-            <thread>
-                <tr class="col-12">
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thread>
-            <tbody>
+<section>
+    <table class="container-fluid">
+        <thread>
+            <tr class="col-12">
+                <th></th>
+                <th></th>
+            </tr>
+        </thread>
+        <tbody>
+        <tr>
             <?php
-            // On declare le compteur
             $i = 0;
-            //        On defini la boucle
-            while ($row = $requete1->fetch(PDO::FETCH_OBJ)) {
-//            Si on est a la premiere case
-                if (($i % 2) == 0) {
-                    ?>
-
-                    <tr class="row">
-                    <td class="col-md-6 mb-3">
-
-                        <p>
-                            <img class="photo" src="./src/img/<?= $row->disc_picture ?>" align="left">
-                            <p><?= $row->disc_title ?></p>
-                            <p><?= $row->artist_name ?></p>
-                            <pre>Labelle : <?= $row->disc_label ?></pre>
-                            <pre>Année : <?= $row->disc_year ?></pre>
-                            <pre>Genre : <?= $row->disc_genre ?></pre>
-                        </div>
-                        <div>
-                            <form action="./view/detail.php" method='get' class=" bottom">
-                                <input type="hidden" name='id' value=<?= $row->disc_id ?>>
-                                <input type='submit' class="btn btn-primary" value='Détails'>
-                            </form>
-                        </div>
-
-                    </td>
-                    <?php
-                    $i++; // On incrémente le compteur
-                } else //Si on est dans la deuxième
-                {
-                    ?>
-                    <td class="col-md-6 mb-3">
-                        <img class="photo" src="./src/img/<?= $row->disc_picture ?>" align="left">
-                        <p><?= $row->disc_title ?></p>
-                        <p><?= $row->artist_name ?></p>
-                        <pre>Labelle : <?= $row->disc_label ?></pre>
-                        <pre>Année : <?= $row->disc_year ?></pre>
-                        <pre>Genre : <?= $row->disc_genre ?></pre>
-                        <div>
-                            <form action="./view/detail.php" method='get' class="">
-                                <input type="hidden" name='id' value=<?= $row->disc_id ?>>
-                                <input type='submit' class="btn btn-primary " value='Détails'>
-                            </form>
-                        </div>
-                    </tr>
-                    </td>
-                    <?php
-                    $i++; //Idem
-                }
-            }
+//            j'utilise une boucle pour inserer les row dans le html'
+            foreach ($row as $key => $value){
+//                Si $i est divisble part deux ou est = 0
+            if (($i % 2) == 0) {
             ?>
-</div>
-</tbody>
-</table>
+        <tr class="row">
+            <td class="col-md-6 mb-3">
+                <img class="photo" alt="photo" title="photo" src="./src/img/<?= $value->disc_picture ?>" align="left">
+                <p><?= $value->disc_title ?></p>
+                <p><?= $value->artist_name ?></p>
+                <pre>Labelle : <?= $value->disc_label ?></pre>
+                <pre>Année : <?= $value->disc_year ?></pre>
+                <pre>Genre : <?= $value->disc_genre ?></pre>
+                </div>
+                <div>
+                    <form action="./view/detail.php" method='get' class=" bottom">
+                        <input type="hidden" name='id' value='<?= $value->disc_id ?>'>
+                        <input type='submit' class="btn btn-primary" value='Détails'>
+                    </form>
+                </div>
+            </td>
+            <?php
+            $i++; // On incrémente le compteur
+            } else //Si on est dans la deuxième
+            {
+            ?>
+            <td class="col-md-6 mb-3">
+                <img class="photo" alt="photo" title="photo" src="./src/img/<?= $value->disc_picture ?>" align="left">
+                <p><?= $value->disc_title ?></p>
+                <p><?= $value->artist_name ?></p>
+                <pre>Labelle : <?= $value->disc_label ?></pre>
+                <pre>Année : <?= $value->disc_year ?></pre>
+                <pre>Genre : <?= $value->disc_genre ?></pre>
+                </div>
+                <div>
+                    <form action="./view/detail.php" method='get' class=" bottom">
+                        <input type="hidden" name='id' value='<?= $value->disc_id ?>'>
+                        <input type='submit' class="btn btn-primary" value='Détails'>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        <?php
+        $i++; //Idem
+        }
+        }
+        ?>
+        </tbody>
+    </table>
 </section>
 
 <?php
