@@ -54,6 +54,7 @@
 </div>
 <br>
 
+
 <h3>Récupération d'un fichier distant</h3><br>
 
 
@@ -75,6 +76,7 @@
     $file = file('http://bienvu.net/misc/customers.csv');
     foreach ($file as $key => $line) {
         $tab[$i] = explode(",", $line);
+        var_dump($tab[$i]);
         ?>
 
         <tr>
@@ -88,6 +90,9 @@
         <?php
         $i++;
     }
+    ?>
+    <?php
+    var_dump($file);
     ?>
     </tbody>
 </table>

@@ -11,16 +11,10 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <link rel="stylesheet" href="../src/css/style.css">
+    <script src="../assets/js/verif_script.js"></script>
 </head>
 <header>
 
 </header>
 <!--header-->
-<!--navbar-->
-<nav>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="../index.php">Accueil</a>
-    </nav>
-</nav>
-<!--navbar-->
-<body>
+
