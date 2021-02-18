@@ -24,18 +24,21 @@ function verifUpload() {
 //  Extensions autorisees
     $tabExt = array('jpg', 'gif', 'png', 'jpeg');
 //    je recupere l'extension'
-    $extension = pathinfo($_FILES['fichier']['tmp_name'], PATHINFO_EXTENSION);
+    $extension = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
 
 //    je verifie si le champ est rempli
     if (empty($_FILES['fichier']['name'])) {
+        var_dump("IF 1");
 //        j'envoi un message sinon '
         return 'Le fichier n existent pas !';
     }
     // On verifie l'extension du fichier
     if (in_array(strtolower($extension), $tabExt)) {
+        var_dump("IF 2");
 //        Comme l'extension est correcte je n'envoi aucun caractere dans ma variable pour pouvoir basculer lors de l'upload vers l'index
         return "";
     } else {
+        var_dump("ELSE");
 //        sinon je return un message d'erreur
         return 'L\'extension du fichier est incorrecte !';
     }

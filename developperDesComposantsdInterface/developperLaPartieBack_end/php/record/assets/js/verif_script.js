@@ -8,13 +8,14 @@ window.onload = (() => {
 
 // je creer ma function pour vérifier mon ajout
 function verif(ajout) {
+    console.log("TEST")
 
     // on teste et on recupere les valuer du formulaire
-    var addTitleIsOk = verifTitre(ajout.elements['addTitle'].value)
-    var addLabelIsOk = verifLabel(ajout.elements['addLabel'].value)
-    var addGenderIsOK = verifGender(ajout.elements['addGender'].value)
-    var addYearIsOK = verifYear(ajout.elements['addYear'].value)
-    var addPriceIsOK = verifPrice(ajout.elements['addPrice'].value)
+    let addTitleIsOk = verifTitre(ajout.elements['addTitle'].value)
+    let addLabelIsOk = verifLabel(ajout.elements['addLabel'].value)
+    let addGenderIsOK = verifGender(ajout.elements['addGender'].value)
+    let addYearIsOK = verifYear(ajout.elements['addYear'].value)
+    let addPriceIsOK = verifPrice(ajout.elements['addPrice'].value)
 
 
     if (addTitleIsOk && addLabelIsOk && addGenderIsOK && addYearIsOK && addPriceIsOK) {

@@ -8,52 +8,26 @@ include('../controllers/function.php');
 define('TARGET', '../src/img/');
 
 //je defini une variable message qui est rediriger vers la page add_form en cas de mauvais upload
-$message = "php";
+$message = '';
 
 /* Ajout d'un disque */
 //Je verifie si les champ sont remplit
 if (isset($_POST['submit'])) {
 
-//    j'inialise une variable pour mon tableau erreur'
-//    $tabError = array();
 
-//    J'utilise ma fonction pour verifier le fichier et je recupere le resultat dans une variable
     $tabError = verifUpload();
 
-
-//    -------------------------------
-//Je recupere les données reçu dans une variable
-    $addTitle = $_POST['addTitle'];
-//Et je teste chaque variable avec une function, qui renvoient le resultat dans le taberror
-//    $tabError[] = regexText($addTitle);
-//
-//
-    $artist = $_POST['artist'];
-//    $tabError[] = regexText1($artist);
-//
-//
-    $addLabel = $_POST['addLabel'];
-//    $tabError[] = regexText2($addLabel);
-//
-//
-    $addYear = $_POST['addYear'];
-//    $tabError[] = regexYear($addYear);
-//
-//
-    $addGender = $_POST['addGender'];
-//    $tabError[] = regexText3($addGender);
-//
-//
-    $addPrice = $_POST['addPrice'];
-//    $tabError[] = regexPrix($addPrice);
-
-//--------------------------
-//    je recupere l'extension'
-
-//    Si $tabError est null alors on continu
     if ($tabError === "") {
-
+        var_dump('coucou dans le IF');
         $extension = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
+
+        $addTitle = $_POST['addTitle'];
+        $artist = $_POST['artist'];
+        $addLabel = $_POST['addLabel'];
+        $addYear = $_POST['addYear'];
+        $addGender = $_POST['addGender'];
+        $addPrice = $_POST['addPrice'];
+
 
 //        Je defini le nom et l'extension pour l'INSERT dans la db.
         $nomImage = $addTitle . "." . $extension;

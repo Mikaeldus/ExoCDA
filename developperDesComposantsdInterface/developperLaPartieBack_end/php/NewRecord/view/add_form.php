@@ -1,21 +1,21 @@
 <?php
 include('../include/dbconnect.php');
 include('../include/header.php');
-include('../controllers/add_script.php');
 include('../include/requeteDB.php');
+include('../controllers/add_script.php');
 ?>
 
 <body>
 <div class="container-fluid">
 
-
+<!--    onsubmit="return verif(ajout)-->
 
     <section>
         <div class="col-12">
 
                 <h2 style="text-align: center">Ajouter un album</h2>
             <div class="row justify-content-center">
-                <form enctype="multipart/form-data" id="formAdd" action="" method="POST"  onsubmit="return verif(this)">
+                <form enctype="multipart/form-data" id="formAdd" action="" method="POST" >
                     <label class="col col-form-label font-weight-bold" for="artist_name">Artiste :</label>
 
                     <div>
@@ -65,7 +65,7 @@ include('../include/requeteDB.php');
                     </fieldset>
 
                     <div class="text-center">
-                        <input id="ajout" type="submit" class="logBtn btn btn-primary" name="submit">
+                        <input id="ajout" type="submit" class="logBtn btn btn-primary" name="submit" >
                         <a href="../index.php" class="logBtn btn btn-primary">Retour</a>
                     </div>
                 </form>

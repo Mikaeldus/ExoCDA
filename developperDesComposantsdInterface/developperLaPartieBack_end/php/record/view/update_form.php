@@ -121,9 +121,11 @@ $id = $_GET['id'];
 
 <?php
 if (!empty($message1)) {
-    echo '<p>', "\n";
-    echo "\t\t<strong>", htmlspecialchars($message1), "</strong>\n";
-    echo "\t</p>\n\n";
+    var_dump("On à quoi dans ce fking tableau");
+    var_dump($message1);
+//    for($nb = 0; $nb < 10; $nb++) {
+//        echo $message1[$nb]. '<br>';
+//    }
 }
 
 include('../include/footer.php');
