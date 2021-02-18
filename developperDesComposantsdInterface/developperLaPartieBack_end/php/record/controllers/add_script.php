@@ -10,7 +10,6 @@ define('TARGET', '../src/img/');
 //je defini une variable message qui est rediriger vers la page add_form en cas de mauvais upload
 $message = array();
 
-
 /* Ajout d'un disque */
 //Je verifie si les champ sont remplit
 if (isset($_POST['submit'])) {
@@ -49,9 +48,9 @@ if (isset($_POST['submit'])) {
     $tabError[] = regexPrix($addPrice);
 
 //--------------------------
-
 //    je recupere l'extension'
-    $extension = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
+    $extension = pathinfo($_FILES['fichier']['tmp_name'], PATHINFO_EXTENSION);
+    var_dump($FILES);
 //    Si $tabError est null alors on continu
     if ($tabError === "") {
 

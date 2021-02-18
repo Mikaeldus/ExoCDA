@@ -24,7 +24,7 @@ function verifUpload() {
 //  Extensions autorisees
     $tabExt = array('jpg', 'gif', 'png', 'jpeg');
 //    je recupere l'extension'
-    $extension = pathinfo($_FILES['fichier']['name'], PATHINFO_EXTENSION);
+    $extension = pathinfo($_FILES['fichier']['tmp_name'], PATHINFO_EXTENSION);
 
 //    je verifie si le champ est rempli
     if (empty($_FILES['fichier']['name'])) {

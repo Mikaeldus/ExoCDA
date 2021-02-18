@@ -14,10 +14,10 @@ include('../include/requeteDB.php');
 
                 <h2 style="text-align: center">Ajouter un album</h2>
             <div class="row justify-content-center">
-                <form enctype="multipart/form-data" id="formAdd" action="" method="POST" onsubmit="return verif(this)">
+                <form enctype="multipart/form-data" id="formAdd" action="" method="POST" onsubmit="return verif(ajout)">
                     <label class="col col-form-label font-weight-bold" for="artist_name">Artiste :</label>
 
-                    <div id="AddArtSel">
+                    <div>
                         <select type="text" class="select form-control" id="artist_name" name="artist">
                             <?php
                             // Boucle pour récupérer les données et les afficher dans le tableau

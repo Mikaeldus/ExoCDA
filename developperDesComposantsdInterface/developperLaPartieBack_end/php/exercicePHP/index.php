@@ -200,5 +200,14 @@
     </section>
 </div>
 
+<div>
+    <h2>Session</h2>
+    <section class="exercices-sections" id="">
+        <button class="btn btn-primary" >
+            <a style="color: #fff" href="./src/php/login.php">Exercice 21 </a>
+        </button>
+        <span class="nom-de-lexo" style="align-items: center;">  </span>
+    </section>
+</div>
 </body>
 </html>

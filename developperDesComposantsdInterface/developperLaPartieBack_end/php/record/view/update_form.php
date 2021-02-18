@@ -3,6 +3,15 @@ include('../include/dbconnect.php');
 include('../include/header.php');
 include('../controllers/update_script.php');
 include('../include/requeteDB.php');
+
+//Page update
+
+// requete permettant de lies les donnnées part rapport à l'ID'
+$requete2 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
+$requete2->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+$requete2->execute();
+$disc = $requete2->fetch(PDO::FETCH_OBJ);
+
 //Je recupere mon ID
 $id = $_GET['id'];
 ?>
