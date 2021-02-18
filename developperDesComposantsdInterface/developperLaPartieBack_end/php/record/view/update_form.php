@@ -4,13 +4,7 @@ include('../include/header.php');
 include('../controllers/update_script.php');
 include('../include/requeteDB.php');
 
-//Page update
 
-// requete permettant de lies les donnnées part rapport à l'ID'
-$requete2 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
-$requete2->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
-$requete2->execute();
-$disc = $requete2->fetch(PDO::FETCH_OBJ);
 
 //Je recupere mon ID
 $id = $_GET['id'];
@@ -33,6 +27,7 @@ $id = $_GET['id'];
                     <div class="col-lg-12">
                         <input type="text" class="forUpdate2 form-control" name="upTitle" id="disc_title"
                                value="<?= $disc->disc_title ?>">
+                        <span class="error"><?= isset($tabError['missTitle']) ? $tabError['missTitle'] : '' ?></span>
                     </div>
                 </div>
 
@@ -51,6 +46,7 @@ $id = $_GET['id'];
                             }
                             ?>
                         </select>
+                        <span class="error"><?= isset($tabError['missArtist']) ? $tabError['missArtist'] : '' ?></span>
                     </div>
                 </div>
                 <div class=row>
@@ -60,6 +56,7 @@ $id = $_GET['id'];
                     <div class="col-lg-12">
                         <input type="text" class="forUpdate form-control" name="upLabel" id="disc_label"
                                value="<?= $disc->disc_label ?>">
+                        <span class="error"><?= isset($tabError['missLabbel']) ? $tabError['missLabbel'] : '' ?></span>
                     </div>
                 </div>
 
@@ -70,6 +67,7 @@ $id = $_GET['id'];
                     <div class="col-lg-12">
                         <input type="number" class="forUpdate form-control" name="upYear" id="disc_year"
                                value="<?= $disc->disc_year ?>">
+                        <span class="error"><?= isset($tabError['missYear']) ? $tabError['missYear'] : '' ?></span>
                     </div>
                 </div>
 
@@ -80,7 +78,7 @@ $id = $_GET['id'];
                     <div class="col-lg-12">
                         <input type="text" class="forUpdate form-control" name="upGender" id="disc_genre"
                                value="<?= $disc->disc_genre ?>">
-
+                        <span class="error"><?= isset($tabError['missGender']) ? $tabError['missGender'] : '' ?></span>
                     </div>
                 </div>
 
@@ -91,6 +89,7 @@ $id = $_GET['id'];
                     <div class="col-lg-12">
                         <input type="number" class="forUpdate form-control" name="upPrice" id="disc_price"
                                value="<?= $disc->disc_price ?>">
+                        <span class="error"><?= isset($tabError['missPrix']) ? $tabError['missPrix'] : '' ?></span>
                     </div>
                 </div>
 
@@ -100,7 +99,8 @@ $id = $_GET['id'];
                     <p>
                         <label for="fichier" title="" class="col-form-label font-weight-bold">Jaquette :</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value=""/>
-                        <input name="fichier" type="file" id="fichier" class="form-control" />
+                        <input name="fichier" type="file" id="fichier" class="form-control"  required/>
+                        <span class="error"><?= isset($tabError['missfichier']) ? $tabError['missfichier'] : '' ?></span>
 
                     </p>
                 </fieldset>
