@@ -4,10 +4,9 @@ include('../include/header.php');
 include('../controllers/update_script.php');
 include('../include/requeteDB.php');
 
-
-
 //Je recupere mon ID
 $id = $_GET['id'];
+//Et grace a ma requete je recupere les information
 ?>
 
 <body>
@@ -118,15 +117,6 @@ $id = $_GET['id'];
     </div>
 </div>
 
-
 <?php
-if (!empty($message1)) {
-    var_dump("On à quoi dans ce fking tableau");
-    var_dump($message1);
-//    for($nb = 0; $nb < 10; $nb++) {
-//        echo $message1[$nb]. '<br>';
-//    }
-}
-
 include('../include/footer.php');
 ?>

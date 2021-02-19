@@ -30,7 +30,7 @@ include('./include/requeteDB.php');
         <tr>
             <?php
             $i = 0;
-//            j'utilise une boucle pour inserer les row dans le html'
+//            j'utilise une boucle pour inserer les données de la requete
             foreach ($row as $key => $value){
 //                Si $i est divisble part deux ou est = 0
             if (($i % 2) == 0) {

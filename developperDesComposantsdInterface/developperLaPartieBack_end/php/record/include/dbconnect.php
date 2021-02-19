@@ -1,4 +1,6 @@
 <?php
+
+//Je me connecte a la DB
 try
 {
     $db = new PDO("mysql:host=localhost;charset=utf8;dbname=record", "root", "1989");

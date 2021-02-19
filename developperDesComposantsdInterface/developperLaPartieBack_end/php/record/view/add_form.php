@@ -8,8 +8,7 @@ include('../include/requeteDB.php');
 <body>
 <div class="container-fluid">
 
-
-
+<!--    // Je recupere les message d'erreur avec une balise span et une variable tableau -->
     <section>
         <div class="col-12">
 
