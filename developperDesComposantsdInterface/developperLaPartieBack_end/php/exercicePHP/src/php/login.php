@@ -1,5 +1,7 @@
 <?php
-include('../../controlers/login_script.php');
+session_start();
+
+include('login_script.php');
 ?>
 <!doctype html>
 <html lang="fr">
@@ -12,46 +14,49 @@ include('../../controlers/login_script.php');
 
 </head>
 <body>
-<?php
-echo $_SESSION['Utilisateur'];
-?>
+
 <div class="container">
     <?php
-    if(isset($_POST['login']) && count($formError) === 0) {
+    // si une variable de session est définie
+    if (isset($_SESSION['login']) && count($tabError) === 0)
+    {
         ?>
-        <span class="alert alert-succes">Connexion réussi</span>
+        <p>
+            Bienvenue <?= $_SESSION['login'] ?>. Votre connexion est un succès!
+        </p>
+        <form method="POST" action="#">
+            <input type="submit" id="back" name="back" value="Retour à la connexion" class="waves-effect waves-light btn" />
+        </form>
         <?php
-    } else {
-    if(isset($formError['login'])) {
+        // sinon on affiche le formulaire de connexion
+    }
+    else
+    {
         ?>
-        <span class="alert alert-danger"><?= $formError['login'] ?></span>
+
+
+        <div class="row">
+            <form class="col s12" action="#" method="POST">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="login" type="text" class="validate"  name="login" placeholder="Identifiant">
+                        <span class="error"><?= isset($tabError['login']) ? $tabError['login'] : '' ?></span>
+                        <label for="login">Identifiant</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="password" type="password" class="validate" name="password" >
+                        <span class="error"><?= isset($tabError['password']) ? $tabError['password'] : '' ?></span>
+                        <label for="password">Mot de passe</label>
+                    </div>
+                </div>
+                <input type="submit" id="submit" name="submit" class="waves-effect waves-light btn" value="Se connecter">
+            </form>
+        </div>
+
         <?php
     }
     ?>
-    <div class="row">
-        <div class="col-sm-6 offset-sm-3">
-            <form action="" method="post" novalidate="novalidate">
-                <div class="mb-3">
-                    <label for="mail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="mail" name="mail"
-                           value="<?= isset($_POST['mail']) ? $_POST['mail'] : '' ?>">
-                    <span class="error"><?= isset($formError['mail']) ? $formError['mail'] : '' ?></span>
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password"
-                           value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>">
-                    <span class="error"><?= isset($formError['password']) ? $formError['password'] : '' ?></span>
-                </div>
-                <input type="submit" name="login" value="Se connecter" id="submit" class="btn btn-secondary">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
-<?php
-}
-?>
+</div>
 </body>
 </html>
