@@ -112,7 +112,7 @@ if (isset($_POST['update'])) {
     $tabExt = array('jpg', 'gif', 'png', 'jpeg');
 
     //je verifie si le champ est rempli
-    if (!empty($_FILES['fichier']['name']))
+    if (!empty($_FILES['fichier']['name'])){
         //Je verifie l'extension du fichier grace a ma variable
         if (in_array(strtolower($extension), $tabExt)) {
             //Si ok je deplace mon fichier grace au target et je nomme le fichier grace a ma variable plus haut
@@ -128,7 +128,7 @@ if (isset($_POST['update'])) {
 
             $tabError['missfichier'] = 'L\'extension du fichier est incorrecte !';
         }
-
+    }
 }
 
 ?>
