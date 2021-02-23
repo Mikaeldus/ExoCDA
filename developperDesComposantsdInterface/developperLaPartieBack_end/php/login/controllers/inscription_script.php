@@ -1,5 +1,5 @@
 <?php
-include ('../include/dbconnect.php');
+include "dbconnect.php";
 // définition des regexs
 $namePattern = '/^[a-zA-Zéàâêûîôùäëüïöèñç \-]+$/';
 $emailPattern = '/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/';

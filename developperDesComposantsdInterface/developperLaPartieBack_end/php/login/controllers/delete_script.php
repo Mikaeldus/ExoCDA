@@ -1,6 +1,5 @@
 <?php
-include('../include/dbconnect.php');
-include('../include/requeteDB.php');
+include "dbconnect.php";
 
 //Je recupere l'id '
 $id = $_GET['id'];
@@ -15,7 +14,7 @@ $delfichier = '../src/img/'.$nomImage;
 if (isset($_POST['delete'])) {
 
     //je defini ma requete
-    $requete = 'DELETE FROM `record`.`disc` WHERE  `disc_id`=:id';
+    $requete = 'DELETE FROM `login`.`disc` WHERE  `disc_id`=:id';
 
     //je prepare ma requete dans une variable
     $result = $db->prepare($requete);

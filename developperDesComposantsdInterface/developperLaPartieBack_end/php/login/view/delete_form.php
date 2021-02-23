@@ -1,7 +1,6 @@
 <?php
-include('../include/dbconnect.php');
+include "../controllers/dbconnect.php";
 include('../include/header.php');
-include('../include/requeteDB.php');
 include('../controllers/delete_script.php');
 
 //je recupere mon ID, le nom de l'image et le titre '

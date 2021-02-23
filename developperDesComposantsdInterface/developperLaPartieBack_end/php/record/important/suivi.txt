@@ -1,2 +1,1 @@
 - Probleme lors de changement d'image pour un Disc, mis un required en atendant, sinon il ne gardait pas l'ancienne il supprimer .
-- Voir pour les fermetures de requete.

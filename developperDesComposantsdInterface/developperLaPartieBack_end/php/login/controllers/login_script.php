@@ -1,5 +1,5 @@
 <?php
-include "dbconnect1.php";
+include  "dbconnect.php";
 
 $emailPattern = '/^[a-z0-9._-]+@[a-z0-9._-]{2,}\.[a-z]{2,4}$/';
 $passwordPattern = '/^[a-zA-Z\déàâêûîôùäëüïöèñ\-$£!\/?ç#@]+$/';

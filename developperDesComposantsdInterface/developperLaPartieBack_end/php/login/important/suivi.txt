@@ -1,2 +1,0 @@
-- Revoir la connection DB dans le header
-- Revoir les requetes dans chaque fichier et faire des fermetures de requetes

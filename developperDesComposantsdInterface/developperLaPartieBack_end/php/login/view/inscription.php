@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('../include/dbconnect.php');
+include "../controllers/dbconnect.php";
 include ('../include/header.php');
 include('../controllers/inscription_script.php');
 

@@ -3,7 +3,7 @@
 $id = $_GET['id'];
 
 //J'include la connection a la db '
-include('../include/dbconnect.php');
+include "dbconnect.php";
 
 
 //Je defini l'aborsecence du target pour le fichier'
