@@ -114,14 +114,14 @@ $id = $_GET['id'];
                     <p>
                         <label for="fichier" title="" class="col-form-label font-weight-bold">Jaquette :</label>
                         <input type="hidden" name="MAX_FILE_SIZE" value=""/>
-                        <input name="fichier" type="file" id="fichier" class="form-control"  required/>
+                        <input name="fichier" type="file" id="fichier" class="form-control" required >
                         <span class="error"><?= isset($tabError['missfichier']) ? $tabError['missfichier'] : '' ?></span>
 
                     </p>
                 </fieldset>
 
                 <div class="col-md-12 justify-content-center text-center">
-                    <img class="photo" title="photo" src="../src/img/<?= $disc->disc_picture ?>" alt="photo">
+                    <img class="photo" title="<?= $disc->disc_picture ?>" src="../src/img/<?= $disc->disc_picture ?>" alt="<?= $disc->disc_picture ?>">
                 </div>
 
                 <div class="text-center">

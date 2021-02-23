@@ -1,5 +1,9 @@
 <?php
-
+// requete permettant de lies les donnnées part rapport à l'ID'
+$requete2 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
+$requete2->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
+$requete2->execute();
+$disc = $requete2->fetch(PDO::FETCH_OBJ);
 
 //Je recupere l'id
 $id = $_GET['id'];
@@ -18,6 +22,7 @@ $tabError = [];
 $filterText = '/(^[\wéèêëûüîïôàçæœ\(\)\&\s\-\.\,\_\+\=\/\%€@\'\"\*\\`\!\?\;\[\]]*$)/i';
 $filterPrix = '/(^[0-9]{1,4}\.[0-9]{2}$)/';
 $filterYear = '/(^(19|20){1}[0-9]{2}$)/';
+
 
 
 // Je verifie si les champs sont remplit
@@ -106,7 +111,7 @@ if (isset($_POST['update'])) {
         $result->bindValue(':upPrice', $upPrice, PDO::PARAM_INT);
         $result->bindValue(':fichier', $nomImage, PDO::PARAM_STR);
 
-    //j'execute l'insert
+        //j'execute l'insert
         $result->execute();
     }
 
@@ -114,14 +119,14 @@ if (isset($_POST['update'])) {
     $tabExt = array('jpg', 'gif', 'png', 'jpeg');
 
     //je verifie si le champ est rempli
-    if (!empty($_FILES['fichier']['name']))
+    if (!empty($_FILES['fichier']['name'])) {
         //Je verifie l'extension du fichier grace a ma variable
         if (in_array(strtolower($extension), $tabExt)) {
             //Si ok je deplace mon fichier grace au target et je nomme le fichier grace a ma variable plus haut
             if (move_uploaded_file($_FILES['fichier']['tmp_name'], TARGET . $nomImage)) {
                 //Je retourne sur l'index si aucun soucis
                 header('Location: http://localhost:8000/index.php');
-            //sinon je return un message d'erreur
+                //sinon je return un message d'erreur
             } else {
                 $tabError['missfichier'] = 'Soucis de fichier Upload impossible !';
             }
@@ -130,7 +135,7 @@ if (isset($_POST['update'])) {
 
             $tabError['missfichier'] = 'L\'extension du fichier est incorrecte !';
         }
-
+    }
 }
 
 ?>
