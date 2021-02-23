@@ -1,24 +1,8 @@
 <?php
-include "../controllers/dbconnect.php";
+include('../include/dbconnect.php');
 include('../include/header.php');
 include('../controllers/update_script.php');
-
-
-// requete permettant l'affichage des artistes dans le select
-try {
-    $requete = $db->prepare('SELECT * FROM artist ORDER BY artist_name');
-    $requete->execute();
-    $artistList = $requete->fetchAll(PDO::FETCH_OBJ);
-} catch (PDOException $e) {
-    echo 'Error: ' . $e->getMessage();
-}
-
-
-// requete permettant de lies les donnnées part rapport à l'ID'
-$requete2 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
-$requete2->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
-$requete2->execute();
-$disc = $requete2->fetch(PDO::FETCH_OBJ);
+include('../include/requeteDB.php');
 
 //Je recupere mon ID
 $id = $_GET['id'];

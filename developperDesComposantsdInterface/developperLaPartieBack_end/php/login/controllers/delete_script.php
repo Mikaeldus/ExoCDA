@@ -1,5 +1,6 @@
 <?php
-include "dbconnect.php";
+include('../include/dbconnect.php');
+include('../include/requeteDB.php');
 
 //Je recupere l'id '
 $id = $_GET['id'];

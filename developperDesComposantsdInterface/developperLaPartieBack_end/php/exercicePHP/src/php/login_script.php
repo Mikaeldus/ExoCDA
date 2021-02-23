@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
   if(count($tabError) === 0) {
         $id = 'mikael@gmail.fr';
         $mdp = 'mikael';
-        var_dump($mdp);
+        var_dump($password);
         var_dump($login);
         if($password === $mdp) {
             $_SESSION['password'] = $mdp ;
