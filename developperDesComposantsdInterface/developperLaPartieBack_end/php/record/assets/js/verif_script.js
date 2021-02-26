@@ -1,15 +1,17 @@
 window.onload = (() => {
-
+document.getElementById("formAdd").addEventListener("submit", verif);
 })
 
+// onsubmit="return verif(this)
 
 // ----- PAGE ADD_Form ------
 // J'ai juste creer la verif pour que les champs soient rempli'
 
 // je creer ma function pour vérifier mon ajout
-function verif(ajout) {
+function verif() {
     console.log("TEST")
 
+    let ajout = document.getElementById("ajout");
     // on teste et on recupere les valuer du formulaire
     let addTitleIsOk = verifTitre(ajout.elements['addTitle'].value)
     let addLabelIsOk = verifLabel(ajout.elements['addLabel'].value)

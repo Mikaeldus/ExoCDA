@@ -1,14 +1,7 @@
 <?php
 include "../controllers/dbconnect.php";
 include('../include/header.php');
-
 include('../controllers/delete_script.php');
-
-//je recupere mon ID, le nom de l'image et le titre '
-$id = $_GET['id'];
-$nomImage = $_GET['disc_picture'];
-$disc_picture = $_GET['disc_picture'];
-$disc_title = $_GET['disc_title'];
 ?>
 
     <body>
@@ -22,7 +15,7 @@ $disc_title = $_GET['disc_title'];
                     </div>
                     <div class="col-12">
                         <p class="font-weight-bold"><u>Picture :</u></p>
-                        <img class="photo" alt="photo" title="photo" src="../src/img/<?= $disc_picture ?>">
+                        <img class="img-fluid width: 100%" alt="photo" title="photo" src="../src/img/<?= $disc_picture ?>">
                     </div>
                 </div>
 

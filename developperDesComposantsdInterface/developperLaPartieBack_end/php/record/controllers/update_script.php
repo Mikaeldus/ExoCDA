@@ -1,4 +1,14 @@
 <?php
+// requete permettant l'affichage des artistes dans le select
+try {
+    $requete = $db->prepare('SELECT * FROM artist ORDER BY artist_name');
+    $requete->execute();
+    $artistList = $requete->fetchAll(PDO::FETCH_OBJ);
+} catch (PDOException $e) {
+    echo 'Error: ' . $e->getMessage();
+}
+
+
 // requete permettant de lies les donnnées part rapport à l'ID'
 $requete2 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
 $requete2->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
@@ -22,7 +32,7 @@ $tabError = [];
 $filterText = '/(^[\wéèêëûüîïôàçæœ\(\)\&\s\-\.\,\_\+\=\/\%€@\'\"\*\\`\!\?\;\[\]]*$)/i';
 $filterPrix = '/(^[0-9]{1,4}\.[0-9]{2}$)/';
 $filterYear = '/(^(19|20){1}[0-9]{2}$)/';
-
+$extension = "";
 
 
 // Je verifie si les champs sont remplit

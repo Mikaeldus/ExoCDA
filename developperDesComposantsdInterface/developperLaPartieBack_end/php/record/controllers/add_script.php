@@ -1,4 +1,14 @@
 <?php
+
+// requete permettant l'affichage des artistes dans le select
+try {
+    $requete = $db->prepare('SELECT * FROM artist ORDER BY artist_name');
+    $requete->execute();
+    $artistList = $requete->fetchAll(PDO::FETCH_OBJ);
+} catch (PDOException $e) {
+    echo 'Error: ' . $e->getMessage();
+}
+
 //J'include la connection a la db '
 include "dbconnect.php";
 
@@ -6,6 +16,7 @@ include "dbconnect.php";
 //Je defini l'aborsecence du target pour le fichier'
 define('TARGET', '../src/img/');
 
+$extension="";
 
 //    j'inialise une variable pour mon tableau erreur'
 $tabError = [];
@@ -101,7 +112,7 @@ if (isset($_POST['submit'])) {
         $result->bindValue(':addLabel', $addLabel, PDO::PARAM_STR);
         $result->bindValue(':addYear', $addYear, PDO::PARAM_INT);
         $result->bindValue(':addGender', $addGender, PDO::PARAM_STR);
-        $result->bindValue(':addPrice', $addPrice, PDO::PARAM_INT);
+        $result->bindValue(':addPrice', $addPrice, PDO::PARAM_STR);
         $result->bindValue(':fichier', $nomImage, PDO::PARAM_STR);
 
 

@@ -2,13 +2,21 @@ html {
     font-style: normal;
 }
 
-.photo {
-    max-width: 500px;
-    max-height: 500px;
-    margin-left: -15px;
-    width: auto;
-    height: auto;
+/* Responsive */
+@media only screen and (max-width: 1000px){
+    div {
+        margin-right: 15px;
+        margin-left: 15px;
+    }
 }
+
+/*.photo {*/
+/*    max-width: 400px;*/
+/*    max-height: 400px;*/
+/*    margin-left: -0px;*/
+/*    width: auto;*/
+/*    height: auto;*/
+/*}*/
 
 p {
     font-weight: bold;

@@ -2,27 +2,6 @@
 include "../controllers/dbconnect.php";
 include('../include/header.php');
 include('../controllers/update_script.php');
-
-
-// requete permettant l'affichage des artistes dans le select
-try {
-    $requete = $db->prepare('SELECT * FROM artist ORDER BY artist_name');
-    $requete->execute();
-    $artistList = $requete->fetchAll(PDO::FETCH_OBJ);
-} catch (PDOException $e) {
-    echo 'Error: ' . $e->getMessage();
-}
-
-
-// requete permettant de lies les donnnées part rapport à l'ID'
-$requete2 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
-$requete2->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
-$requete2->execute();
-$disc = $requete2->fetch(PDO::FETCH_OBJ);
-
-//Je recupere mon ID
-$id = $_GET['id'];
-//Et grace a ma requete je recupere les information
 ?>
 
 <body>
@@ -37,11 +16,8 @@ $id = $_GET['id'];
             <form enctype="multipart/form-data" action="#" method="POST" >
                 <div class="row justify-content-center">
                     <div class="col-md-12">
-                        <label class="font-weight-bold" for="artist_name">Titre :</label>
-                    </div>
-                    <div class="col-lg-12">
-                        <input type="text" class="forUpdate2 form-control" name="upTitle" id="disc_title"
-                               value="<?= $disc->disc_title ?>">
+                        <label class="font-weight-bold" for="id">Titre :</label>
+                        <input type="text" class="forUpdate2 form-control" name="upTitle" id="disc_title" value="<?= $disc->disc_title ?>">
                         <span class="error"><?= isset($tabError['missTitle']) ? $tabError['missTitle'] : '' ?></span>
                     </div>
                 </div>
@@ -121,7 +97,7 @@ $id = $_GET['id'];
                 </fieldset>
 
                 <div class="col-md-12 justify-content-center text-center">
-                    <img class="photo" title="<?= $disc->disc_picture ?>" src="../src/img/<?= $disc->disc_picture ?>" alt="<?= $disc->disc_picture ?>">
+                    <img class="img-fluid width: 100%" title="<?= $disc->disc_picture ?>" src="../src/img/<?= $disc->disc_picture ?>" alt="<?= $disc->disc_picture ?>">
                 </div>
 
                 <div class="text-center">

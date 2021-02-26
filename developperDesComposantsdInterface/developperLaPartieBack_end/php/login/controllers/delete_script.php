@@ -1,8 +1,13 @@
 <?php
 include "dbconnect.php";
 
-//Je recupere l'id '
+//je recupere mon ID, le nom de l'image et le titre '
 $id = $_GET['id'];
+$nomImage = $_GET['disc_picture'];
+$disc_picture = $_GET['disc_picture'];
+$disc_title = $_GET['disc_title'];
+
+
 
 //Le nom de l'image'
 $nomImage = $_GET['disc_picture'];

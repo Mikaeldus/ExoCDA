@@ -1,16 +1,8 @@
 <?php
 include "../controllers/dbconnect.php";
 include('../include/header.php');
+include "../controllers/detail_script.php";
 
-
-//Page detail
-
-// requete permettant de lies les donnnées part rapport à l'ID'
-$requete4 = $db->prepare('SELECT * FROM artist JOIN disc ON artist.artist_id = disc.artist_id WHERE disc_id = :id');
-$requete4->bindParam(':id', $_GET['id'], PDO::PARAM_INT);
-$requete4->execute();
-//Je recupere mon ID
-$id = $_GET['id'];
 
 ?>
 
@@ -68,7 +60,7 @@ while ($row = $requete4->fetch(PDO::FETCH_OBJ)) {
         <div class="row justify-content-center text-center">
             <div class="col-md-6 mb-3">
                 <p class="font-weight-bold"></p>
-                <img class="photo" alt="photo" title="photo" src="../src/img/<?= $row->disc_picture ?>">
+                <img class="img-fluid width: 100%" alt="photo" title="photo" src="../src/img/<?= $row->disc_picture ?>">
             </div>
         </div>
         <div class="container">

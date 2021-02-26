@@ -2,15 +2,6 @@
 include "../controllers/dbconnect.php" ;
 include('../include/header.php');
 include('../controllers/add_script.php');
-
-// requete permettant l'affichage des artistes dans le select
-try {
-    $requete = $db->prepare('SELECT * FROM artist ORDER BY artist_name');
-    $requete->execute();
-    $artistList = $requete->fetchAll(PDO::FETCH_OBJ);
-} catch (PDOException $e) {
-    echo 'Error: ' . $e->getMessage();
-}
 ?>
 
 <body>
@@ -22,12 +13,12 @@ try {
 
             <h2 style="text-align: center">Ajouter un album</h2>
             <div class="row justify-content-center">
-                <form enctype="multipart/form-data" id="formAdd" action="" method="POST"   onsubmit="return verif(this)">
+                <form enctype="multipart/form-data" id="formAdd" action="" method="POST"">
                 <label class="col col-form-label font-weight-bold" for="artist_name">Artiste :</label>
                 <span class="error"><?= isset($tabError['addTitle']) ? $tabError['addTitle'] : '' ?></span>
 
                 <div>
-                    <select type="text" class="select form-control" id="artist_name" name="artist">
+                    <select class="select form-control" id="artist_name" name="artist">
                         <?php
                         // Boucle pour récupérer les données et les afficher dans le tableau
                         foreach ($artistList as $artist) {
@@ -63,7 +54,7 @@ try {
 
 
                 <label class="col col-form-label font-weight-bold">Prix :</label>
-                <input type="number" name="addPrice" id="addPrice" class="form-control" placeholder="Entrez le prix">
+                <input type="text" name="addPrice" id="addPrice" class="form-control" placeholder="Entrez le prix">
                 <span id="missPrice" class="hint missPrice"></span>
                 <span class="error"><?= isset($tabError['missPrix']) ? $tabError['missPrix'] : '' ?></span>
 
@@ -89,7 +80,6 @@ try {
 </div>
 
 <?php
-
 include('../include/footer.php');
 ?>
 
