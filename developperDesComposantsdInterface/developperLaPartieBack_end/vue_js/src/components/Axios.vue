@@ -12,7 +12,9 @@
         <span class="lighten">
       <span v-html="currency.symbol"></span>{{ currency.rate_float | currencydecimal }}
     </span>
+
       </div>
+
     </div>
   </div>
 

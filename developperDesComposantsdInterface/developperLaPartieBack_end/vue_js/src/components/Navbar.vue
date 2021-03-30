@@ -20,7 +20,8 @@ export default {
         {id: 1, icon: 'Cour', actionBtn: this.CourFunction},
         {id: 2, icon: 'Axios', actionBtn: this.AxiosFunction},
         {id: 3, icon: 'Addition', actionBtn: this.AdditionFunction},
-        {id: 4, icon: 'Magic', actionBtn: this.MagicFunction}
+        {id: 4, icon: 'Magic', actionBtn: this.MagicFunction},
+        {id: 5, icon: 'Calculatrice', actionBtn: this.CalculatriceFunction}
       ]
     }
   },
@@ -30,21 +31,32 @@ export default {
       this.$parent.$parent.appAxios ^= false
       this.$parent.$parent.appAddition ^= false
       this.$parent.$parent.appMagic ^= false
+      this.$parent.$parent.appCalculatrice ^= false
     },
     AxiosFunction: function () {
       this.$parent.$parent.appAxios ^= true
       this.$parent.$parent.appCour ^= false
       this.$parent.$parent.appAddition ^= false
       this.$parent.$parent.appMagic ^= false
+      this.$parent.$parent.appCalculatrice ^= false
     },
     AdditionFunction: function () {
       this.$parent.$parent.appAddition ^= true
       this.$parent.$parent.appAxios ^= false
       this.$parent.$parent.appCour ^= false
       this.$parent.$parent.appMagic ^= false
+      this.$parent.$parent.appCalculatrice ^= false
     },
     MagicFunction: function () {
       this.$parent.$parent.appMagic ^= true
+      this.$parent.$parent.appAddition ^= false
+      this.$parent.$parent.appAxios ^= false
+      this.$parent.$parent.appCour ^= false
+      this.$parent.$parent.appCalculatrice ^= false
+    },
+    CalculatriceFunction: function () {
+      this.$parent.$parent.appCalculatrice ^= true
+      this.$parent.$parent.appMagic ^= false
       this.$parent.$parent.appAddition ^= false
       this.$parent.$parent.appAxios ^= false
       this.$parent.$parent.appCour ^= false

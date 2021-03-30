@@ -7,7 +7,7 @@
       <input type="number" name="nb" id="nb" v-model.number="nb" @change="verification">
     </label>
     <h2 class="text-center"> {{ message }}</h2>
-    <p>Nombre a trouver : {{nbMagic}}</p>
+    <p>Nombre a trouver : {{ nbMagic }}</p>
     <hr>
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
         this.message = "Plus grand";
       }
       if (nbMagic === this.nb) {
-        this.message = "Bravo";
+        this.message = "Bravo !!";
       }
 
     },
