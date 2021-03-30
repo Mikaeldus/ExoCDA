@@ -1,7 +1,8 @@
 <template>
   <div class="container">
+    <hr>
     <h2 class="center-align">Exemple</h2>
-
+    <hr>
       <h1 v-show="affichage">{{ message }}</h1>
       <h1 v-show="!affichage">ce n'est pas bon !</h1>
       <hr>

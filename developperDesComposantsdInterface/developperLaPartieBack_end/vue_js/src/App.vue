@@ -3,30 +3,37 @@
   <Index/>
     <Cour v-if="appCour"/>
     <Axios v-if="appAxios"/>
-    <hr>
-    <h1 class="text-center">Exercices</h1>
-    <hr>
+    <Addition v-if="appAddition"/>
+    <Magic v-if="appMagic"/>
+
+
+
   </div>
 </template>
 
 <script>
 
 
-
+import Magic from "@/components/Magic";
 import Index from "@/components/Index";
 import Cour from "@/components/Cour";
 import Axios from "@/components/Axios";
+import Addition from "@/components/Addition";
 export default {
   name: 'App',
   components: {
+    Addition,
     Axios,
     Cour,
     Index,
+    Magic,
   },
   data () {
     return {
       appCour: false,
-      appAxios: false
+      appAxios: false,
+      appAddition: false,
+      appMagic: false,
     }
   }
 }

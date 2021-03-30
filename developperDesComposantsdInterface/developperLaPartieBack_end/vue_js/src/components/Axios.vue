@@ -1,6 +1,8 @@
 <template>
-  <div class="contnainer">
+  <div class="container">
+    <hr>
     <h2 class="center-align">Exemple Axios</h2>
+    <hr>
     <div id="bit">
       <h1>Bitcoin Price</h1>
       <div
@@ -13,6 +15,7 @@
       </div>
     </div>
   </div>
+
 </template>
 
 <script>

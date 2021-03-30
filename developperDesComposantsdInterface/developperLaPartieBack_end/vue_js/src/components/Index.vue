@@ -1,10 +1,14 @@
 <template>
+  <div class="container">
+    <div class="card">
   <div class="row">
     <div class="col s6 offset-s1">
       <hr>
       <h1>{{ msg }}</h1>
       <hr>
       <navbar></navbar>
+    </div>
+  </div>
     </div>
   </div>
 </template>
@@ -20,7 +24,7 @@ export default {
   },
   data () {
     return {
-      msg: 'Cours'
+      msg: 'VueJS'
     }
   }
 }
