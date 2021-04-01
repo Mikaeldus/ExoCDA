@@ -1,10 +1,10 @@
 <template>
   <nav class="navbar navbar-dark bg-dark">
     <span class="navbar icon ">
-      <li
-          v-for="btnN in btnsNavbar"
-          v-bind:key="btnN.id">
-            <i class="btn btn-primary" v-on:click="btnN.actionBtn">{{btnN.icon}}</i>
+<!--      je parcour mon tableau pour recuperer les btn correspondant -->
+          <li
+          v-for="btns in btnsNavbar" :key="btns.id">
+            <i class="btn btn-primary" @click="btns.actionBtn">{{ btns.icon }}</i>
           </li>
     </span>
   </nav>
@@ -28,38 +28,18 @@ export default {
   methods: {
     CourFunction: function () {
       this.$parent.$parent.appCour ^= true
-      this.$parent.$parent.appAxios ^= false
-      this.$parent.$parent.appAddition ^= false
-      this.$parent.$parent.appMagic ^= false
-      this.$parent.$parent.appCalculatrice ^= false
     },
     AxiosFunction: function () {
       this.$parent.$parent.appAxios ^= true
-      this.$parent.$parent.appCour ^= false
-      this.$parent.$parent.appAddition ^= false
-      this.$parent.$parent.appMagic ^= false
-      this.$parent.$parent.appCalculatrice ^= false
     },
     AdditionFunction: function () {
       this.$parent.$parent.appAddition ^= true
-      this.$parent.$parent.appAxios ^= false
-      this.$parent.$parent.appCour ^= false
-      this.$parent.$parent.appMagic ^= false
-      this.$parent.$parent.appCalculatrice ^= false
     },
     MagicFunction: function () {
       this.$parent.$parent.appMagic ^= true
-      this.$parent.$parent.appAddition ^= false
-      this.$parent.$parent.appAxios ^= false
-      this.$parent.$parent.appCour ^= false
-      this.$parent.$parent.appCalculatrice ^= false
     },
     CalculatriceFunction: function () {
       this.$parent.$parent.appCalculatrice ^= true
-      this.$parent.$parent.appMagic ^= false
-      this.$parent.$parent.appAddition ^= false
-      this.$parent.$parent.appAxios ^= false
-      this.$parent.$parent.appCour ^= false
     }
   }
 }
@@ -67,7 +47,7 @@ export default {
 </script>
 
 <style>
-nav{
+nav {
   cursor: pointer;
 }
 </style>
